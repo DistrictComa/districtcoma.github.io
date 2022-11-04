@@ -1,18 +1,44 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <title>Colourblind awareness campaign</title>
+<link rel="stylesheet" href="mystyle.css">
+  <title>CAC - Colourblindness Awareness Campaign</title>
+  <script>
+    function checkAnswer() {
+    let text;
+    if (document.getElementById("userNumber").value == 74) {
+        text = "You got that one <mark>right</mark>! You likely aren't colourblind.";
+    } else if (document.getElementById("userNumber").value == 71) {
+        text = "Look a bit harder..."
+    } else {
+        text = "You got that one <mark>wrong</mark>... You may want to see an optician.";
+    } 
+    document.getElementById("result").innerHTML = text;
+    }
+</script>
 </head>
 <body>
   <h1>Colourblindness in a nutshell</h1>
   <h2>What is colourblindness?</h2>
-  <p>Colourblindness is when you can't see certain colours, or distinguish between them</p>
+  <p id="keypoint">Colourblindness is when you can't see certain colours, or distinguish between them.</p>
+  <p>There are many types, the most common one is red-green colourblindness. The reason why men are more likely to be colourblind is because they only have one X chromosone, so if one carries the colourblindness trait then then will have it, but as women carry two X chromosones so even if one of the chromosones have the trait, the other will override it.</p>
   <h2>How many people are colourblind?</h2>
-  <p>Have a guess!</p>
-  <p>Your Guess: </p>
+  <p>Approximately 1 in 12 males and 1 in 200 females are colourblind (8 and 0.5% respectively) (<a href="https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/color-blindness">source</a>)</p>
   <h2>Are you colourblind?</h2>
-  <p>Take the test!</p>
-  <img src="https://colormax.org/wp-content/uploads/2019/07/color-blind-test.png">
-  <p>Credit: colormax.org</p>
-  <p>What is the number?</p>
+  <img class="test" src="https://colormax.org/wp-content/uploads/2019/07/color-blind-test.png" width="400" height="400">
+  <p><b>Credit: colormax.org</b></p>
+  <p>What's the number?</p>
+  <input id="userNumber" type="number">
+  <button onclick="checkAnswer()">Check</button>
+  <p id="result"></p>
+  
+  <hr>
+  
+  <h2>How can we be more colourblind-friendly?</h2>
+  <div class="box">
+    <img class="portrait" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Tipperary_Hill_-_greenoverred_Syracuse%2C_New_York.jpg/800px-Tipperary_Hill_-_greenoverred_Syracuse%2C_New_York.jpg">
+    <p style="padding:16px">By creating positional cues which work with colour-based cues, it is easier to identify certain things, such as traffic lights. Here is a bad example of an inverted traffic light which may cause colourblind people to mistakenly believe it is green and perhaps even lead to an accident!<br><br>What do <u>YOU</u> think should be done about this?<br><br>Discuss with a friend and discover how you can make this junction more colourblind friendly! (hint: what do colourblind people expect the bottom light to mean when they see this?)</p>
+  </div>
+  <p id="footer">© 2022 CAC - All rights reserved</p>
 </body>
 </html>
